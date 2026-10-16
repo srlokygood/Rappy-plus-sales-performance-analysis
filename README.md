@@ -194,7 +194,7 @@ The solution is split into two complementary views:
 
 ### 🖥️ Final Dashboard Preview
 
-![E-commerce Tableau Dashboard]([img/Overview.png](https://public.tableau.com/app/profile/jair.forero/viz/RappyCurrentState-financialperformance/Overview?publish=yes))
+[![E-commerce Tableau Dashboard](img/Overview.png)](https://public.tableau.com/app/profile/jair.forero/viz/RappyCurrentState-financialperformance/Overview?publish=yes)
 
 ## 🔄 6. End-to-End Analytical Workflow
 
