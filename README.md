@@ -48,7 +48,7 @@ The first stage focused on inspecting datasets, identifying quality issues, and 
 The objective was to improve data consistency while minimizing unnecessary data loss.
 
 ### 📸 Data Cleaning Results
-![Data Cleaning Results](images/data-cleaning.png)
+![Data Cleaning Results](img/Clean_data.png)
 
 ## 📊 2. Exploratory Data Analysis & Business KPIs
 
@@ -84,7 +84,7 @@ Correct table relationships are essential to prevent duplicate records from infl
 
 <!-- Add a screenshot of your Python notebook showing KPI calculations or product rankings. -->
 
-![Exploratory Data Analysis](images/eda-kpis.png)
+![Exploratory Data Analysis](img/KPIs.png)
 
 ## 🗄️ 3. SQL Analysis
 
@@ -113,7 +113,7 @@ This analysis provides a framework for identifying opportunities to improve the 
 
 <!-- Add a screenshot of the SQL query or the resulting funnel visualization. -->
 
-![SQL Conversion Funnel](images/conversion-funnel.png)
+![SQL Conversion Funnel](img/funnel.png)
 
 ### 👥 Cohort & Customer Retention Analysis
 
@@ -137,7 +137,7 @@ This analysis supports comparisons of customer engagement across registration co
 
 <!-- Add a screenshot of the SQL query or the monthly cohort retention output. -->
 
-![Cohort Retention Analysis](images/cohort-retention.png)
+![Cohort Retention Analysis](img/cohort.png)
 
 ## 🧪 4. A/B Testing & Statistical Hypothesis Testing
 
@@ -176,7 +176,7 @@ The observed difference may be due to random variation. Further experimentation 
 
 <!-- Add a screenshot of your Python statistical test and results. -->
 
-![A/B Testing Results](images/ab-testing-results.png)
+![A/B Testing Results](img/ABtest.png)
 
 ## 📈 5. Tableau Dashboard
 The final stage focused on presenting business metrics through an interactive, multi-view Tableau dashboard designed to support both high-level executive monitoring and granular product-level analysis.
@@ -194,9 +194,7 @@ The solution is split into two complementary views:
 
 ### 🖥️ Final Dashboard Preview
 
-![E-commerce Tableau Dashboard]([images/tableau-dashboard.png](https://public.tableau.com/app/profile/jair.forero/viz/RappyCurrentState-financialperformance/Overview?publish=yes))
-
-🔗 **Tableau Public:** [Add your published dashboard link here]
+![E-commerce Tableau Dashboard]([images/Overview.png](https://public.tableau.com/app/profile/jair.forero/viz/RappyCurrentState-financialperformance/Overview?publish=yes))
 
 ## 🔄 6. End-to-End Analytical Workflow
 
