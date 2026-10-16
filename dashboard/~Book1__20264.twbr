@@ -1,0 +1,3213 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='11154623141d1550deca6f58ecb6c5228ddb5c669cce5891c8993ab88415532e' _.fcp.WorkbookFingerprinting.true...creator-author-id='11154623141d1550deca6f58ecb6c5228ddb5c669cce5891c8993ab88415532e' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='1cd9c16d5b66ba9e3ede5399c88af340b70dacda4414919913a291d1b79af152' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='1cd9c16d5b66ba9e3ede5399c88af340b70dacda4414919913a291d1b79af152' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <ExternalImageContentForZones />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='RappyCurrentState-financialperformance' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='orders_clean.csv+ (Multiple Connections)' inline='true' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='orders_clean' name='textscan.0gwpub80hipd0l15bqg6s19f78mg'>
+            <connection class='textscan' directory='D:/data-analyst/Rappli-plus/data/clean' filename='orders_clean.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0gwpub80hipd0l15bqg6s19f78mg' name='orders_clean.csv' table='[orders_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_001' separator=','>
+              <column datatype='string' name='id_pedido' ordinal='0' />
+              <column datatype='string' name='id_usuario' ordinal='1' />
+              <column datatype='date' name='fecha_hora_pedido' ordinal='2' />
+              <column datatype='string' name='pais' ordinal='3' />
+              <column datatype='string' name='dispositivo' ordinal='4' />
+              <column datatype='string' name='fuente_referencia' ordinal='5' />
+              <column datatype='string' name='nombre_producto' ordinal='6' />
+              <column datatype='string' name='categoria_producto' ordinal='7' />
+              <column datatype='real' name='cantidad' ordinal='8' />
+              <column datatype='real' name='precio_unitario' ordinal='9' />
+              <column datatype='real' name='monto_descuento' ordinal='10' />
+              <column datatype='real' name='monto_total' ordinal='11' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0gwpub80hipd0l15bqg6s19f78mg' name='catalog_clean.csv' table='[catalog_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_001' separator=','>
+              <column datatype='string' name='nombre_producto' ordinal='0' />
+              <column datatype='string' name='categoria_producto' ordinal='1' />
+              <column datatype='real' name='costo_unitario' ordinal='2' />
+              <column datatype='string' name='proveedor' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0gwpub80hipd0l15bqg6s19f78mg' name='marketing_clean.csv' table='[marketing_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_001' separator=','>
+              <column datatype='date' name='fecha' ordinal='0' />
+              <column datatype='string' name='pais' ordinal='1' />
+              <column datatype='string' name='id_campaña' ordinal='2' />
+              <column datatype='string' name='canal' ordinal='3' />
+              <column datatype='real' name='gasto' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[canal]' value='[marketing_clean.csv].[canal]' />
+          <map key='[cantidad]' value='[orders_clean.csv].[cantidad]' />
+          <map key='[categoria_producto (catalog_clean.csv)]' value='[catalog_clean.csv].[categoria_producto]' />
+          <map key='[categoria_producto]' value='[orders_clean.csv].[categoria_producto]' />
+          <map key='[costo_unitario]' value='[catalog_clean.csv].[costo_unitario]' />
+          <map key='[dispositivo]' value='[orders_clean.csv].[dispositivo]' />
+          <map key='[fecha]' value='[marketing_clean.csv].[fecha]' />
+          <map key='[fecha_hora_pedido]' value='[orders_clean.csv].[fecha_hora_pedido]' />
+          <map key='[fuente_referencia]' value='[orders_clean.csv].[fuente_referencia]' />
+          <map key='[gasto]' value='[marketing_clean.csv].[gasto]' />
+          <map key='[id_campaña]' value='[marketing_clean.csv].[id_campaña]' />
+          <map key='[id_pedido]' value='[orders_clean.csv].[id_pedido]' />
+          <map key='[id_usuario]' value='[orders_clean.csv].[id_usuario]' />
+          <map key='[monto_descuento]' value='[orders_clean.csv].[monto_descuento]' />
+          <map key='[monto_total]' value='[orders_clean.csv].[monto_total]' />
+          <map key='[nombre_producto (catalog_clean.csv)]' value='[catalog_clean.csv].[nombre_producto]' />
+          <map key='[nombre_producto]' value='[orders_clean.csv].[nombre_producto]' />
+          <map key='[pais (marketing_clean.csv)]' value='[marketing_clean.csv].[pais]' />
+          <map key='[pais]' value='[orders_clean.csv].[pais]' />
+          <map key='[precio_unitario]' value='[orders_clean.csv].[precio_unitario]' />
+          <map key='[proveedor]' value='[catalog_clean.csv].[proveedor]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_001&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[catalog_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_001&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[marketing_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_001&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_pedido</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id_pedido]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>id_pedido</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_usuario</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id_usuario]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>id_usuario</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fecha_hora_pedido</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[fecha_hora_pedido]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>fecha_hora_pedido</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pais</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pais]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>pais</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dispositivo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[dispositivo]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>dispositivo</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fuente_referencia</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[fuente_referencia]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>fuente_referencia</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nombre_producto</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nombre_producto]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>nombre_producto</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categoria_producto</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[categoria_producto]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>categoria_producto</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cantidad</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cantidad]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>cantidad</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>precio_unitario</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[precio_unitario]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>precio_unitario</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monto_descuento</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[monto_descuento]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>monto_descuento</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monto_total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[monto_total]</local-name>
+            <parent-name>[orders_clean.csv]</parent-name>
+            <remote-alias>monto_total</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nombre_producto</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nombre_producto (catalog_clean.csv)]</local-name>
+            <parent-name>[catalog_clean.csv]</parent-name>
+            <remote-alias>nombre_producto</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categoria_producto</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[categoria_producto (catalog_clean.csv)]</local-name>
+            <parent-name>[catalog_clean.csv]</parent-name>
+            <remote-alias>categoria_producto</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>costo_unitario</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[costo_unitario]</local-name>
+            <parent-name>[catalog_clean.csv]</parent-name>
+            <remote-alias>costo_unitario</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>proveedor</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[proveedor]</local-name>
+            <parent-name>[catalog_clean.csv]</parent-name>
+            <remote-alias>proveedor</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fecha</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[fecha]</local-name>
+            <parent-name>[marketing_clean.csv]</parent-name>
+            <remote-alias>fecha</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pais</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pais (marketing_clean.csv)]</local-name>
+            <parent-name>[marketing_clean.csv]</parent-name>
+            <remote-alias>pais</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_campaña</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id_campaña]</local-name>
+            <parent-name>[marketing_clean.csv]</parent-name>
+            <remote-alias>id_campaña</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>canal</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[canal]</local-name>
+            <parent-name>[marketing_clean.csv]</parent-name>
+            <remote-alias>canal</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gasto</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[gasto]</local-name>
+            <parent-name>[marketing_clean.csv]</parent-name>
+            <remote-alias>gasto</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Monto total month year' datatype='real' name='[Calculation_1316721304080384]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='LOOKUP(SUM([monto_total]), -1)'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Total Profit orders' datatype='real' name='[Calculation_1316721304342529]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([monto_total])&#13;&#10;-&#13;&#10;SUM([costo_unitario] * [cantidad])' />
+      </column>
+      <column caption='net profit' datatype='real' name='[Calculation_1316721342775298]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_1316721304342529] - SUM([gasto])' />
+      </column>
+      <column caption='Total cost marketing' datatype='real' name='[Calculation_1316721344012291]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([gasto])' />
+      </column>
+      <column caption='% Revenue Electronic' datatype='real' name='[Calculation_1392587708276740]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([monto_total]) / SUM({ FIXED : SUM([monto_total]) })' />
+      </column>
+      <column caption='Products Cost' datatype='real' name='[Calculation_1392587912646662]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([costo_unitario] * [cantidad])' />
+      </column>
+      <column caption='catalog_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]' role='measure' type='quantitative' />
+      <column caption='marketing_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]' role='measure' type='quantitative' />
+      <column caption='orders_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]' role='measure' type='quantitative' />
+      <column caption='Canal' datatype='string' name='[canal]' role='dimension' type='nominal' />
+      <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+      <column caption='Categoria Producto (Catalog Clean.Csv)' datatype='string' name='[categoria_producto (catalog_clean.csv)]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='%null%' value='Other' />
+        </aliases>
+      </column>
+      <column caption='Categoria Producto' datatype='string' name='[categoria_producto]' role='dimension' type='nominal' />
+      <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+      <column caption='Dispositivo' datatype='string' name='[dispositivo]' role='dimension' type='nominal' />
+      <column caption='Fecha' datatype='date' name='[fecha]' role='dimension' type='ordinal' />
+      <column caption='Fecha Hora Pedido' datatype='date' name='[fecha_hora_pedido]' role='dimension' type='ordinal' />
+      <column caption='Fuente Referencia' datatype='string' name='[fuente_referencia]' role='dimension' type='nominal' />
+      <column caption='Gasto' datatype='real' name='[gasto]' role='measure' type='quantitative' />
+      <column caption='Id Campaña' datatype='string' name='[id_campaña]' role='dimension' type='nominal' />
+      <column caption='Id Pedido' datatype='string' name='[id_pedido]' role='dimension' type='nominal' />
+      <column caption='Id Usuario' datatype='string' name='[id_usuario]' role='dimension' type='nominal' />
+      <column caption='Monto Descuento' datatype='real' name='[monto_descuento]' role='measure' type='quantitative' />
+      <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+      <column caption='Nombre Producto (Catalog Clean.Csv)' datatype='string' name='[nombre_producto (catalog_clean.csv)]' role='dimension' type='nominal' />
+      <column caption='Nombre Producto' datatype='string' name='[nombre_producto]' role='dimension' type='nominal' />
+      <column caption='Pais (Marketing Clean.Csv)' datatype='string' name='[pais (marketing_clean.csv)]' role='dimension' type='nominal' />
+      <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Precio Unitario' datatype='real' name='[precio_unitario]' role='measure' type='quantitative' />
+      <column caption='Proveedor' datatype='string' name='[proveedor]' role='dimension' type='nominal' />
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:1]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-type='Field' type='CumTotal'>
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' />
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]' />
+        </table-calc>
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:2]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' level-break='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]' ordering-type='Field' type='CumTotal'>
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' />
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]' />
+        </table-calc>
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:3]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' ordering-type='Field' type='CumTotal' />
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:4]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-field='' ordering-type='Field' type='CumTotal' />
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:5]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-type='Field' type='CumTotal'>
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]' />
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' />
+        </table-calc>
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:6]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' level-break='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' ordering-type='Field' type='CumTotal'>
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]' />
+          <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' />
+        </table-calc>
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[diff:sum:monto_total:qk]' pivot='key' type='quantitative'>
+        <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[fecha_hora_pedido]' derivation='Day' name='[dy:fecha_hora_pedido:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[fecha_hora_pedido]' derivation='Month' name='[mn:fecha_hora_pedido:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[pais]' derivation='None' name='[none:pais:nk]' pivot='key' type='nominal' />
+      <column-instance column='[monto_total]' derivation='Sum' name='[pcto:sum:monto_total:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[fecha_hora_pedido]' derivation='Month-Trunc' name='[tmn:fecha_hora_pedido:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1316721304080384]' derivation='User' name='[usr:Calculation_1316721304080384:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[monto_total]' derivation='Sum' name='[win:sum:monto_total:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' from='-2' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <group caption='Action (Pais)' hidden='true' name='[Action (Pais)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[pais]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/jaira/AppData/Local/Temp/TableauTemp/#TableauTemp_1mni0281um4fkr1cml93704prw57.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E' table='[Extract].[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]' type='table' />
+            <relation name='catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283' table='[Extract].[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]' type='table' />
+            <relation name='marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932' table='[Extract].[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]' type='table' />
+          </relation>
+          <cols>
+            <map key='[canal]' value='[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932].[canal]' />
+            <map key='[cantidad]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[cantidad]' />
+            <map key='[categoria_producto (catalog_clean.csv)]' value='[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283].[categoria_producto]' />
+            <map key='[categoria_producto]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[categoria_producto]' />
+            <map key='[costo_unitario]' value='[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283].[costo_unitario]' />
+            <map key='[dispositivo]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[dispositivo]' />
+            <map key='[fecha]' value='[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932].[fecha]' />
+            <map key='[fecha_hora_pedido]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[fecha_hora_pedido]' />
+            <map key='[fuente_referencia]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[fuente_referencia]' />
+            <map key='[gasto]' value='[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932].[gasto]' />
+            <map key='[id_campaña]' value='[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932].[id_campaña]' />
+            <map key='[id_pedido]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[id_pedido]' />
+            <map key='[id_usuario]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[id_usuario]' />
+            <map key='[monto_descuento]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[monto_descuento]' />
+            <map key='[monto_total]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[monto_total]' />
+            <map key='[nombre_producto (catalog_clean.csv)]' value='[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283].[nombre_producto]' />
+            <map key='[nombre_producto]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[nombre_producto]' />
+            <map key='[pais (marketing_clean.csv)]' value='[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932].[pais]' />
+            <map key='[pais]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[pais]' />
+            <map key='[precio_unitario]' value='[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E].[precio_unitario]' />
+            <map key='[proveedor]' value='[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283].[proveedor]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>id_pedido</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[id_pedido]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>id_pedido</remote-alias>
+              <ordinal>0</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>24881</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_usuario</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[id_usuario]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>id_usuario</remote-alias>
+              <ordinal>1</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7042</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fecha_hora_pedido</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[fecha_hora_pedido]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>fecha_hora_pedido</remote-alias>
+              <ordinal>2</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>200</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pais</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pais]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>pais</remote-alias>
+              <ordinal>3</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dispositivo</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[dispositivo]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>dispositivo</remote-alias>
+              <ordinal>4</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fuente_referencia</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[fuente_referencia]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>fuente_referencia</remote-alias>
+              <ordinal>5</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>nombre_producto</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[nombre_producto]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>nombre_producto</remote-alias>
+              <ordinal>6</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>categoria_producto</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[categoria_producto]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>categoria_producto</remote-alias>
+              <ordinal>7</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cantidad</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cantidad]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>cantidad</remote-alias>
+              <ordinal>8</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>precio_unitario</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[precio_unitario]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>precio_unitario</remote-alias>
+              <ordinal>9</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13379</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monto_descuento</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[monto_descuento]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>monto_descuento</remote-alias>
+              <ordinal>10</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monto_total</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[monto_total]</local-name>
+              <parent-name>[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]</parent-name>
+              <remote-alias>monto_total</remote-alias>
+              <ordinal>11</ordinal>
+              <family>orders_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20253</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>nombre_producto</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[nombre_producto (catalog_clean.csv)]</local-name>
+              <parent-name>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</parent-name>
+              <remote-alias>nombre_producto</remote-alias>
+              <ordinal>12</ordinal>
+              <family>catalog_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>categoria_producto</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[categoria_producto (catalog_clean.csv)]</local-name>
+              <parent-name>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</parent-name>
+              <remote-alias>categoria_producto</remote-alias>
+              <ordinal>13</ordinal>
+              <family>catalog_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>costo_unitario</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[costo_unitario]</local-name>
+              <parent-name>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</parent-name>
+              <remote-alias>costo_unitario</remote-alias>
+              <ordinal>14</ordinal>
+              <family>catalog_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>proveedor</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[proveedor]</local-name>
+              <parent-name>[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]</parent-name>
+              <remote-alias>proveedor</remote-alias>
+              <ordinal>15</ordinal>
+              <family>catalog_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fecha</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[fecha]</local-name>
+              <parent-name>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</parent-name>
+              <remote-alias>fecha</remote-alias>
+              <ordinal>16</ordinal>
+              <family>marketing_clean.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>180</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pais</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pais (marketing_clean.csv)]</local-name>
+              <parent-name>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</parent-name>
+              <remote-alias>pais</remote-alias>
+              <ordinal>17</ordinal>
+              <family>marketing_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_campaña</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[id_campaña]</local-name>
+              <parent-name>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</parent-name>
+              <remote-alias>id_campaña</remote-alias>
+              <ordinal>18</ordinal>
+              <family>marketing_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>canal</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[canal]</local-name>
+              <parent-name>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</parent-name>
+              <remote-alias>canal</remote-alias>
+              <ordinal>19</ordinal>
+              <family>marketing_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gasto</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[gasto]</local-name>
+              <parent-name>[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]</parent-name>
+              <remote-alias>gasto</remote-alias>
+              <ordinal>20</ordinal>
+              <family>marketing_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1558</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:pais:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Argentina&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Mexico&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Colombia&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:1]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:3]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:5]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:6]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[diff:sum:monto_total:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[pcto:sum:monto_total:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[win:sum:monto_total:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304080384:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Colombia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='catalog_clean.csv' id='catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283'>
+            <properties context=''>
+              <relation connection='textscan.0gwpub80hipd0l15bqg6s19f78mg' name='catalog_clean.csv' table='[catalog_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_001' separator=','>
+                  <column datatype='string' name='nombre_producto' ordinal='0' />
+                  <column datatype='string' name='categoria_producto' ordinal='1' />
+                  <column datatype='real' name='costo_unitario' ordinal='2' />
+                  <column datatype='string' name='proveedor' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283' table='[Extract].[catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283]' type='table' />
+            </properties>
+          </object>
+          <object caption='marketing_clean.csv' id='marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932'>
+            <properties context=''>
+              <relation connection='textscan.0gwpub80hipd0l15bqg6s19f78mg' name='marketing_clean.csv' table='[marketing_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_001' separator=','>
+                  <column datatype='date' name='fecha' ordinal='0' />
+                  <column datatype='string' name='pais' ordinal='1' />
+                  <column datatype='string' name='id_campaña' ordinal='2' />
+                  <column datatype='string' name='canal' ordinal='3' />
+                  <column datatype='real' name='gasto' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932' table='[Extract].[marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932]' type='table' />
+            </properties>
+          </object>
+          <object caption='orders_clean.csv' id='orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E'>
+            <properties context=''>
+              <relation connection='textscan.0gwpub80hipd0l15bqg6s19f78mg' name='orders_clean.csv' table='[orders_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_001' separator=','>
+                  <column datatype='string' name='id_pedido' ordinal='0' />
+                  <column datatype='string' name='id_usuario' ordinal='1' />
+                  <column datatype='date' name='fecha_hora_pedido' ordinal='2' />
+                  <column datatype='string' name='pais' ordinal='3' />
+                  <column datatype='string' name='dispositivo' ordinal='4' />
+                  <column datatype='string' name='fuente_referencia' ordinal='5' />
+                  <column datatype='string' name='nombre_producto' ordinal='6' />
+                  <column datatype='string' name='categoria_producto' ordinal='7' />
+                  <column datatype='real' name='cantidad' ordinal='8' />
+                  <column datatype='real' name='precio_unitario' ordinal='9' />
+                  <column datatype='real' name='monto_descuento' ordinal='10' />
+                  <column datatype='real' name='monto_total' ordinal='11' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E' table='[Extract].[orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[nombre_producto]' />
+              <expression op='[nombre_producto (catalog_clean.csv)]' />
+            </expression>
+            <first-end-point object-id='orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E' />
+            <second-end-point object-id='catalog_clean.csv_4D8100869E094EEF9CEE80E3C009D283' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[fuente_referencia]' />
+              <expression op='[canal]' />
+            </expression>
+            <first-end-point object-id='orders_clean.csv_C26560C8D9ED4F8EB6A0E4AF40DF5C4E' />
+            <second-end-point object-id='marketing_clean.csv_53EE4E6C4E3641E98ACB87DBE7E4F932' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_1B77958EB9224DA9967642A6D641A43A]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' worksheet='Averague revenue per ticket' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+    <action caption='Highlight 1 (generated)' name='[Action3_6E594E5582594010ABA1EB244C3989F4]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Pais (Marketing Clean.Csv)' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action3_75A446A928E84050A90845EA9CB6D46A]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' worksheet='Category sells per country' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='% Inversion by country'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>% Investment by Country</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Gasto' datatype='real' name='[gasto]' role='measure' type='quantitative' />
+            <column-instance column='[pais (marketing_clean.csv)]' derivation='None' name='[none:pais (marketing_clean.csv):nk]' pivot='key' type='nominal' />
+            <column caption='Pais (Marketing Clean.Csv)' datatype='string' name='[pais (marketing_clean.csv)]' role='dimension' type='nominal' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[gasto]' derivation='Sum' name='[pcto:sum:gasto:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[gasto]' derivation='Sum' name='[sum:gasto:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[pcto:sum:gasto:qk]' value='p0.0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais (marketing_clean.csv):nk]' />
+              <size column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:gasto:qk]' />
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[pcto:sum:gasto:qk]' />
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais (marketing_clean.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4F15B5E0-58CF-43D3-8EE7-184DDB06B832}' />
+    </worksheet>
+    <worksheet name='% revenue by country'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column-instance column='[pais]' derivation='None' name='[none:pais:nk]' pivot='key' type='nominal' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[pcto:sum:monto_total:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[pcto:sum:monto_total:qk]' value='p0.0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais:nk]' />
+              <size column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' />
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais:nk]' />
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[pcto:sum:monto_total:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{2B77594E-8E87-4927-B7AA-1C51FB3348F2}' />
+    </worksheet>
+    <worksheet name='Average quantity per order'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Average Quantity per Order</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column-instance column='[cantidad]' derivation='Avg' name='[avg:cantidad:qk]' pivot='key' type='quantitative' />
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:cantidad:qk]' value='*0' />
+            <format attr='font-size' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:cantidad:qk]' value='20' />
+            <format attr='font-weight' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:cantidad:qk]' value='bold' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:cantidad:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A680A96A-47A2-42F9-9E6C-6AD0D737739E}' />
+    </worksheet>
+    <worksheet name='Averague revenue per ticket'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Average Revenue per Ticket</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column-instance column='[monto_total]' derivation='Avg' name='[avg:monto_total:qk]' pivot='key' type='quantitative' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:monto_total:qk]' value='C1033%' />
+            <format attr='font-size' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:monto_total:qk]' value='20' />
+            <format attr='font-weight' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:monto_total:qk]' value='bold' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[avg:monto_total:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{EA2C2BAE-E2B9-40DE-9167-752C2DD6C473}' />
+    </worksheet>
+    <worksheet name='Category sells per country'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Sales Volume by Country</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column-instance column='[pais]' derivation='None' name='[none:pais:nk]' pivot='key' type='nominal' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[cantidad]' derivation='Sum' name='[sum:cantidad:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:cantidad:qk]</rows>
+        <cols>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais:nk]</cols>
+      </table>
+      <simple-id uuid='{15CFE1DB-6948-40F1-A2E6-8473C5A33925}' />
+    </worksheet>
+    <worksheet name='Detailed table'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Total Profit orders' datatype='real' name='[Calculation_1316721304342529]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([monto_total])&#13;&#10;-&#13;&#10;SUM([costo_unitario] * [cantidad])' />
+            </column>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Categoria Producto (Catalog Clean.Csv)' datatype='string' name='[categoria_producto (catalog_clean.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Nombre Producto (Catalog Clean.Csv)' datatype='string' name='[nombre_producto (catalog_clean.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[categoria_producto (catalog_clean.csv)]' derivation='None' name='[none:categoria_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[nombre_producto (catalog_clean.csv)]' derivation='None' name='[none:nombre_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[cantidad]' derivation='Sum' name='[sum:cantidad:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1316721304342529]' derivation='User' name='[usr:Calculation_1316721304342529:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:cantidad:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:cantidad:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]' value='108' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk] / [federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk])</rows>
+        <cols>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{49BA0049-5F38-46D6-B5BC-4582B9CD2654}' />
+    </worksheet>
+    <worksheet name='Gross Profit'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Fecha Hora Pedido' datatype='date' name='[fecha_hora_pedido]' role='dimension' type='ordinal' />
+            <column-instance column='[fecha_hora_pedido]' derivation='Month' name='[mn:fecha_hora_pedido:ok]' pivot='key' type='ordinal' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[fecha_hora_pedido]' derivation='Month-Trunc' name='[tmn:fecha_hora_pedido:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]'>
+            <groupfilter function='level-members' level='[mn:fecha_hora_pedido:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]</column>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+            <format attr='fill-above' id='refline3' value='#00000000' />
+            <format attr='fill-below' id='refline3' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]' enable-instant-analytics='true' formula='min' id='refline2' label-type='automatic' scope='per-pane' value-column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]</rows>
+        <cols>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]</cols>
+      </table>
+      <simple-id uuid='{351D1166-F180-427E-AB68-E078B3CF1C86}' />
+    </worksheet>
+    <worksheet name='Gross Profit Per category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Gross Profit per Category Over Time</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Total Profit orders' datatype='real' name='[Calculation_1316721304342529]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([monto_total])&#13;&#10;-&#13;&#10;SUM([costo_unitario] * [cantidad])' />
+            </column>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Categoria Producto (Catalog Clean.Csv)' datatype='string' name='[categoria_producto (catalog_clean.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+            <column caption='Fecha Hora Pedido' datatype='date' name='[fecha_hora_pedido]' role='dimension' type='ordinal' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column-instance column='[categoria_producto (catalog_clean.csv)]' derivation='None' name='[none:categoria_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[fecha_hora_pedido]' derivation='Month-Trunc' name='[tmn:fecha_hora_pedido:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1316721304342529]' derivation='User' name='[usr:Calculation_1316721304342529:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:categoria_producto (catalog_clean.csv):nk]' />
+              <groupfilter function='member' level='[none:categoria_producto (catalog_clean.csv):nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]' scope='rows' value='Total Gross Profit orders' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]</rows>
+        <cols>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[tmn:fecha_hora_pedido:qk]</cols>
+      </table>
+      <simple-id uuid='{F9C7691C-FC33-4230-91B0-BBA1900250C4}' />
+    </worksheet>
+    <worksheet name='KPI Total-revenue'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Total revenue</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-orientation' value='0' />
+            <format attr='wrap' value='auto' />
+            <format attr='vertical-align' value='auto' />
+            <format attr='text-align' value='left' />
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' value='c&quot;$&quot;#,##0,,.0M' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='vertical-align' data-class='subtotal' value='auto' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='20' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{02028063-80D7-4291-87A4-E170BB761CB7}' />
+    </worksheet>
+    <worksheet name='MTD monto total'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk:6]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Sum' level-break='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' ordering-type='Field' type='CumTotal'>
+                <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]' />
+                <order field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok]' />
+              </table-calc>
+            </column-instance>
+            <column-instance column='[monto_total]' derivation='Sum' name='[cum:sum:monto_total:qk]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+            </column-instance>
+            <column-instance column='[fecha_hora_pedido]' derivation='Day' name='[dy:fecha_hora_pedido:ok]' pivot='key' type='ordinal' />
+            <column caption='Fecha Hora Pedido' datatype='date' name='[fecha_hora_pedido]' role='dimension' type='ordinal' />
+            <column-instance column='[fecha_hora_pedido]' derivation='Month' name='[mn:fecha_hora_pedido:ok]' pivot='key' type='ordinal' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[cum:sum:monto_total:qk:6]</rows>
+        <cols>([federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok] / [federated.0tcp70c1tg7unq1ffn6891m3jq5u].[dy:fecha_hora_pedido:ok])</cols>
+      </table>
+      <simple-id uuid='{DE6E8DAA-F530-4F01-BFF6-D82596AD1BCB}' />
+    </worksheet>
+    <worksheet name='Marketing cost'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Total cost marketing' datatype='real' name='[Calculation_1316721344012291]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([gasto])' />
+            </column>
+            <column caption='Gasto' datatype='real' name='[gasto]' role='measure' type='quantitative' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[Calculation_1316721344012291]' derivation='User' name='[usr:Calculation_1316721344012291:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-weight' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721344012291:qk]' value='bold' />
+            <format attr='text-align' value='left' />
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721344012291:qk]' value='c&quot;$&quot;#,##0,,.00M;(&quot;$&quot;#,##0,,.00M)' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='20' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721344012291:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{110F9CC1-5014-4321-9346-F27E6DD44B02}' />
+    </worksheet>
+    <worksheet name='Most Product sold'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Nombre Producto (Catalog Clean.Csv)' datatype='string' name='[nombre_producto (catalog_clean.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[nombre_producto (catalog_clean.csv)]' derivation='None' name='[none:nombre_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[cantidad]' derivation='Sum' name='[sum:cantidad:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:cantidad:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:nombre_producto (catalog_clean.csv):nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:nombre_producto (catalog_clean.csv):nk]' member='&quot;Blender-XL-Red&quot;' />
+                <groupfilter function='member' level='[none:nombre_producto (catalog_clean.csv):nk]' member='&quot;Jacket-Winter-M&quot;' />
+                <groupfilter function='member' level='[none:nombre_producto (catalog_clean.csv):nk]' member='&quot;Phone-Pro-128GB&quot;' />
+                <groupfilter function='member' level='[none:nombre_producto (catalog_clean.csv):nk]' member='&quot;Sneakers-Urban-42&quot;' />
+                <groupfilter function='member' level='[none:nombre_producto (catalog_clean.csv):nk]' member='&quot;Tablet-Standard-64GB&quot;' />
+                <groupfilter function='member' level='[none:nombre_producto (catalog_clean.csv):nk]' member='&quot;Vacuum-Pro-Black&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk]</column>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk]' value='190' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[:Measure Names]</rows>
+        <cols>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{2A7CD925-254C-4E6A-BF84-D77C60A80F31}' />
+    </worksheet>
+    <worksheet name='Product Cost'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Products Cost' datatype='real' name='[Calculation_1392587912646662]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([costo_unitario] * [cantidad])' />
+            </column>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1392587912646662]' derivation='User' name='[usr:Calculation_1392587912646662:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='20' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1392587912646662:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{FA894F71-13F1-48C9-8F95-5A40A16C2F05}' />
+    </worksheet>
+    <worksheet name='Profits by product'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Total Profit orders' datatype='real' name='[Calculation_1316721304342529]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([monto_total])&#13;&#10;-&#13;&#10;SUM([costo_unitario] * [cantidad])' />
+            </column>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Nombre Producto (Catalog Clean.Csv)' datatype='string' name='[nombre_producto (catalog_clean.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[nombre_producto (catalog_clean.csv)]' derivation='None' name='[none:nombre_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1316721304342529]' derivation='User' name='[usr:Calculation_1316721304342529:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{CE8B910E-4A04-43F8-9C8A-7F2E38FC0CE5}' />
+    </worksheet>
+    <worksheet name='Revenue for Electronic'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Revenue from Electronics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='% Revenue Electronic' datatype='real' name='[Calculation_1392587708276740]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([monto_total]) / SUM({ FIXED : SUM([monto_total]) })' />
+            </column>
+            <column caption='Categoria Producto' datatype='string' name='[categoria_producto]' role='dimension' type='nominal' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column-instance column='[categoria_producto]' derivation='None' name='[none:categoria_producto:nk]' pivot='key' type='nominal' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1392587708276740]' derivation='User' name='[usr:Calculation_1392587708276740:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto:nk]'>
+            <groupfilter function='member' level='[none:categoria_producto:nk]' member='&quot;Electronica&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' value='c&quot;$&quot;#,##0,,.00M;(&quot;$&quot;#,##0,,.00M)' />
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1392587708276740:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='12' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' />
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1392587708276740:qk]' />
+              <lod column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{2DD4DB7F-271A-41F9-B1B5-B610896F2CE5}' />
+    </worksheet>
+    <worksheet name='Total Profit'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Total Profit</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Total Profit orders' datatype='real' name='[Calculation_1316721304342529]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([monto_total])&#13;&#10;-&#13;&#10;SUM([costo_unitario] * [cantidad])' />
+            </column>
+            <column caption='net profit' datatype='real' name='[Calculation_1316721342775298]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_1316721304342529] - SUM([gasto])' />
+            </column>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+            <column caption='Gasto' datatype='real' name='[gasto]' role='measure' type='quantitative' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Pais' datatype='string' name='[pais]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[Calculation_1316721342775298]' derivation='User' name='[usr:Calculation_1316721342775298:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]'>
+            <groupfilter function='level-members' level='[pais]' user:ui-action-filter='[Action3_75A446A928E84050A90845EA9CB6D46A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[Action (Pais)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-weight' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721342775298:qk]' value='bold' />
+            <format attr='text-align' value='left' />
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721342775298:qk]' value='c&quot;$&quot;#,##0,,.00M;(&quot;$&quot;#,##0,,.00M)' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='20' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721342775298:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{8D5227ED-BB84-49A7-BD86-279565163263}' />
+    </worksheet>
+    <worksheet name='Total orders profit'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Profit after products cost</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Total Profit orders' datatype='real' name='[Calculation_1316721304342529]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([monto_total])&#13;&#10;-&#13;&#10;SUM([costo_unitario] * [cantidad])' />
+            </column>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Costo Unitario' datatype='real' name='[costo_unitario]' role='measure' type='quantitative' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1316721304342529]' derivation='User' name='[usr:Calculation_1316721304342529:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-weight' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]' value='bold' />
+            <format attr='font-size' value='12' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-format' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]' value='c&quot;$&quot;#,##0,,.00M;(&quot;$&quot;#,##0,,.00M)' />
+            <format attr='font-size' field='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]' value='20' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[usr:Calculation_1316721304342529:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{70364A04-5E24-4D16-BD0E-B400AB91F58A}' />
+    </worksheet>
+    <worksheet name='best-selling category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Best-Selling Category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Cantidad' datatype='real' name='[cantidad]' role='measure' type='quantitative' />
+            <column caption='Categoria Producto (Catalog Clean.Csv)' datatype='string' name='[categoria_producto (catalog_clean.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column-instance column='[categoria_producto (catalog_clean.csv)]' derivation='None' name='[none:categoria_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[cantidad]' derivation='Sum' name='[sum:cantidad:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]'>
+            <groupfilter function='member' level='[none:categoria_producto (catalog_clean.csv):nk]' member='&quot;Electrónica&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='161' />
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='12' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:cantidad:qk]' />
+              <text column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BD3F73CB-8485-4BF6-935F-5D448A17A894}' />
+    </worksheet>
+    <worksheet name='monto total by category and product'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Total Revenue by Category &amp; Product</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+            <column caption='Categoria Producto (Catalog Clean.Csv)' datatype='string' name='[categoria_producto (catalog_clean.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Categoria Producto' datatype='string' name='[categoria_producto]' role='dimension' type='nominal' />
+            <column caption='Monto Total' datatype='real' name='[monto_total]' role='measure' type='quantitative' />
+            <column caption='Nombre Producto (Catalog Clean.Csv)' datatype='string' name='[nombre_producto (catalog_clean.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[categoria_producto (catalog_clean.csv)]' derivation='None' name='[none:categoria_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[categoria_producto]' derivation='None' name='[none:categoria_producto:nk]' pivot='key' type='nominal' />
+            <column-instance column='[nombre_producto (catalog_clean.csv)]' derivation='None' name='[none:nombre_producto (catalog_clean.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[monto_total]' derivation='Sum' name='[sum:monto_total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]</rows>
+        <cols>([federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk] / [federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:nombre_producto (catalog_clean.csv):nk])</cols>
+      </table>
+      <simple-id uuid='{670F586F-70DF-4EB7-BF0A-BEAE45A36E3E}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Detailed Profits'>
+      <style />
+      <size maxheight='860' maxwidth='1800' minheight='560' minwidth='1800' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98140' id='31' param='horz' type-v2='layout-flow' w='99112' x='444' y='930'>
+            <zone h='98140' id='29' type-v2='layout-basic' w='90223' x='444' y='930'>
+              <zone h='89884' id='17' param='horz' type-v2='layout-flow' w='90223' x='444' y='9186'>
+                <zone h='89884' id='11' param='horz' type-v2='layout-flow' w='90223' x='444' y='9186'>
+                  <zone h='89884' id='9' type-v2='layout-basic' w='90223' x='444' y='9186'>
+                    <zone h='89884' id='3' param='vert' type-v2='layout-flow' w='59277' x='444' y='9186'>
+                      <zone fixed-size='508' h='59070' id='23' is-fixed='true' type-v2='layout-basic' w='59277' x='444' y='9186'>
+                        <zone h='11861' id='14' param='horz' type-v2='layout-flow' w='59277' x='444' y='9186'>
+                          <zone fixed-size='534' h='11861' id='25' is-fixed='true' name='best-selling category' w='29638' x='444' y='9186'>
+                            <layout-cache type-h='fixed' type-w='cell' />
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                            </zone-style>
+                          </zone>
+                          <zone fixed-size='720' h='11861' id='26' is-fixed='true' name='Revenue for Electronic' w='29639' x='30082' y='9186'>
+                            <layout-cache type-h='fixed' type-w='cell' />
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                            </zone-style>
+                          </zone>
+                        </zone>
+                        <zone h='47209' id='28' name='Gross Profit Per category' w='59277' x='444' y='21047'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                      <zone h='30812' id='27' name='Detailed table' w='59277' x='444' y='68256'>
+                        <layout-cache cell-count-h='7' non-cell-size-h='83' type-h='cell' type-w='fixed' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone h='89884' id='13' name='monto total by category and product' w='30946' x='59721' y='9186'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+              <zone h='8256' id='19' param='vert' type-v2='layout-flow' w='90223' x='444' y='930'>
+                <zone fixed-size='30' forceUpdate='true' h='4418' id='20' is-fixed='true' type-v2='text' w='90223' x='444' y='930'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>Detail: Categorys and products behavior</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98140' id='30' is-fixed='true' param='vert' type-v2='layout-flow' w='8889' x='90667' y='930'>
+              <zone h='10000' id='32' name='Gross Profit Per category' pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]' type-v2='color' w='8889' x='90667' y='930'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1200' minheight='1200' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98140' id='33' param='vert' type-v2='layout-flow' w='99112' x='444' y='930'>
+                <zone fixed-size='30' forceUpdate='true' h='4418' id='20' type-v2='text' w='90223' x='444' y='930'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>Detail: Categorys and products behavior</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='94' h='11861' id='25' is-fixed='true' name='best-selling category' w='29638' x='444' y='9186'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='94' h='11861' id='26' is-fixed='true' name='Revenue for Electronic' w='29639' x='30082' y='9186'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='89884' id='13' is-fixed='true' name='monto total by category and product' w='30946' x='59721' y='9186'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='47209' id='28' is-fixed='true' name='Gross Profit Per category' w='59277' x='444' y='21047'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10000' id='32' name='Gross Profit Per category' pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]' type-v2='color' w='8889' x='90667' y='930'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='257' h='30812' id='27' is-fixed='true' name='Detailed table' w='59277' x='444' y='68256'>
+                  <layout-cache type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D62D43DB-2107-4451-976A-41D91E367069}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Overview'>
+      <style />
+      <size maxheight='860' maxwidth='1800' minheight='560' minwidth='420' sizing-mode='range' />
+      <datasources>
+        <datasource caption='orders_clean.csv+ (Multiple Connections)' name='federated.0tcp70c1tg7unq1ffn6891m3jq5u' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0tcp70c1tg7unq1ffn6891m3jq5u'>
+        <column caption='Fecha Hora Pedido' datatype='date' name='[fecha_hora_pedido]' role='dimension' type='ordinal' />
+        <column-instance column='[fecha_hora_pedido]' derivation='Month' name='[mn:fecha_hora_pedido:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='17674' id='9' name='Total Profit' w='15813' x='17538' y='9767'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='17674' id='21' is-fixed='true' type-v2='layout-basic' w='16004' x='33351' y='9767'>
+            <zone h='17674' id='20' param='vert' type-v2='layout-flow' w='16004' x='33351' y='9767'>
+              <zone fixed-size='64' h='8372' id='10' is-fixed='true' name='Averague revenue per ticket' w='16004' x='33351' y='9767'>
+                <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='9302' id='11' name='Average quantity per order' w='16004' x='33351' y='18139'>
+                <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-h='41' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='38606' id='23' param='horz' type-v2='layout-flow' w='17071' x='467' y='60464'>
+            <zone h='38606' id='45' param='horz' type-v2='layout-flow' w='17071' x='467' y='60464'>
+              <zone h='38606' id='46' param='vert' type-v2='layout-flow' w='17071' x='467' y='60464'>
+                <zone h='38606' id='47' name='% Inversion by country' w='17071' x='467' y='60464'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='41' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='5116' id='13' type-v2='text' w='84391' x='5022' y='930'>
+            <formatted-text>
+              <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>Current State: January – June 2025</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='3721' id='14' type-v2='text' w='84391' x='5022' y='6046'>
+            <formatted-text>
+              <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Overview of sales performance, financial revenue, and costs</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='71629' id='32' name='Category sells per country' w='19299' x='17538' y='27441'>
+            <layout-cache fixed-size-h='178' type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='98140' id='36' param='vert' type-v2='layout-flow' w='10120' x='89413' y='930'>
+            <zone forceUpdate='true' h='5232' id='37' type-v2='text' w='10120' x='89413' y='930'>
+              <formatted-text>
+                <run bold='true' fontsize='20'>Filters</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='157' h='19186' id='39' is-fixed='true' name='Gross Profit' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]' type-v2='filter' w='10120' x='89413' y='6162'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='78' h='10000' id='48' is-fixed='true' name='% Inversion by country' pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais (marketing_clean.csv):nk]' type-v2='color' w='10120' x='89413' y='25348'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone fixed-size='1036' h='71629' id='38' is-fixed='true' name='Gross Profit' w='52576' x='36837' y='27441'>
+            <layout-cache minheight='198' minwidth='163' type-h='scalable' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='8488' id='44' name='Marketing cost' w='17071' x='467' y='18952'>
+            <layout-cache type-h='cell' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='71' h='9185' id='7' is-fixed='true' name='KPI Total-revenue' w='17071' x='467' y='9767'>
+            <layout-cache type-h='cell' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='33024' id='50' name='% revenue by country' w='17071' x='467' y='27440'>
+            <layout-cache type-h='cell' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='8837' id='56' param='horz' type-v2='layout-flow' w='4555' x='467' y='930'>
+            <zone h='8837' id='57' image-file-url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1MfIOuAkgvXWNZ99Z8nXEnf7Kb8qsILut9kS1--V20E24ox5ajvoESiDr&amp;s=10' is-centered='0' is-scaled='1' type-v2='bitmap' w='4555' x='467' y='930'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='17674' id='58' param='horz' type-v2='layout-flow' w='40058' x='49355' y='9767' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='12326' id='53' type-v2='dashboard-object' w='13902' x='73364' y='12209'>
+          <button action='tabdoc:goto-sheet window-id=&quot;{71082408-65FA-4AFE-83D3-C5C39EFEE802}&quot;' button-type='text'>
+            <button-visual-state>
+              <caption>Detailed</caption>
+              <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+              <format attr='background-color' value='#4e79a796' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='1' />
+              <format attr='border-color' value='#a0cbe8' />
+            </button-visual-state>
+          </button>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='2100' minheight='2100' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='60' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98140' id='59' param='vert' type-v2='layout-flow' w='99066' x='467' y='930'>
+                <zone fixed-size='68' h='8837' id='57' image-file-url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1MfIOuAkgvXWNZ99Z8nXEnf7Kb8qsILut9kS1--V20E24ox5ajvoESiDr&amp;s=10' is-centered='0' is-fixed='true' is-scaled='1' type-v2='bitmap' w='4556' x='467' y='930'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='5117' id='13' type-v2='text' w='84391' x='5023' y='930'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>Current State: January – June 2025</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='5232' id='37' type-v2='text' w='10119' x='89414' y='930'>
+                  <formatted-text>
+                    <run bold='true' fontsize='20'>Filters</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3720' id='14' type-v2='text' w='84391' x='5023' y='6047'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Overview of sales performance, financial revenue, and costs</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='71' h='9186' id='7' is-fixed='true' name='KPI Total-revenue' w='17073' x='467' y='9767'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='144' h='17675' id='9' is-fixed='true' name='Total Profit' w='15813' x='17540' y='9767'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='68' h='8837' id='10' is-fixed='true' name='Averague revenue per ticket' w='16004' x='33353' y='9767'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-h='41' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12326' id='53' type-v2='dashboard-object' w='13902' x='73364' y='12209'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{71082408-65FA-4AFE-83D3-C5C39EFEE802}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Detailed</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#4e79a796' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='1' />
+                      <format attr='border-color' value='#a0cbe8' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='68' h='8837' id='11' is-fixed='true' name='Average quantity per order' w='16004' x='33353' y='18604'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-h='41' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='65' h='8488' id='44' is-fixed='true' name='Marketing cost' w='17073' x='467' y='18953'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='276' h='33024' id='50' is-fixed='true' name='% revenue by country' w='17073' x='467' y='27441'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='71628' id='32' is-fixed='true' name='Category sells per country' w='19299' x='17540' y='27442'>
+                  <layout-cache fixed-size-h='178' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='157' h='19186' id='39' mode='checkdropdown' name='Gross Profit' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]' type-v2='filter' w='10119' x='89414' y='6162'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='71628' id='38' is-fixed='true' name='Gross Profit' w='52575' x='36839' y='27442'>
+                  <layout-cache minheight='198' minwidth='163' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36628' id='47' is-fixed='true' name='% Inversion by country' w='17073' x='467' y='60465'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='78' h='10000' id='48' name='% Inversion by country' pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais (marketing_clean.csv):nk]' type-v2='color' w='10119' x='89414' y='25348'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C8AEA90E-CB9F-40A2-955C-8A08E963B055}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='KPI Total-revenue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0BDA9E58-0974-4E8D-BFD3-BAF046DB5029}' />
+    </window>
+    <window class='worksheet' name='Total orders profit'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FF5F5BDD-FCED-4F1C-A03C-C476A144F5AD}' />
+    </window>
+    <window class='worksheet' name='Total Profit'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F5F4C875-97DE-4154-B838-5CF57C4260CD}' />
+    </window>
+    <window class='worksheet' name='Marketing cost'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{004159FB-56D3-46BA-8645-6A5263A33FA1}' />
+    </window>
+    <window class='worksheet' name='Averague revenue per ticket'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CAB6CAE0-7EEC-4299-B5CB-D57E91586D27}' />
+    </window>
+    <window class='worksheet' name='Average quantity per order'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7EA64223-8254-40FE-9B7E-19BA3DAE03F9}' />
+    </window>
+    <window class='worksheet' name='Gross Profit'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[mn:fecha_hora_pedido:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5341F93C-B4F1-4C91-B328-FB81191E831A}' />
+    </window>
+    <window class='worksheet' name='Category sells per country'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8821EED1-6222-46C7-A10F-1DA8182D8186}' />
+    </window>
+    <window class='worksheet' name='% Inversion by country'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais (marketing_clean.csv):nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:gasto:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4A483508-4E5D-4CB7-B7C4-06C1B3FA2C97}' />
+    </window>
+    <window class='worksheet' name='% revenue by country'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[sum:monto_total:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:pais:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C727649E-7B73-4BA6-9981-B5C7133D95FD}' />
+    </window>
+    <window class='worksheet' name='Gross Profit Per category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto (catalog_clean.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7CDFC8E7-B400-412A-913D-8E1873B433EE}' />
+    </window>
+    <window class='worksheet' name='best-selling category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{83E3E7DE-6D4A-407C-8208-2AC6C451BEB5}' />
+    </window>
+    <window class='worksheet' name='Revenue for Electronic'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{52EFD9A5-4AAF-443F-B597-7FD8704C7E30}' />
+    </window>
+    <window class='worksheet' name='MTD monto total'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CAFD161B-EB68-48E2-919E-59F14C727440}' />
+    </window>
+    <window class='worksheet' name='Detailed table'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{57628D24-1D84-4B2C-9FE7-133C946A39C6}' />
+    </window>
+    <window class='worksheet' name='monto total by category and product'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0tcp70c1tg7unq1ffn6891m3jq5u].[none:categoria_producto:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{07CAA9FD-014D-46E0-8D17-F61FBA19FAD7}' />
+    </window>
+    <window class='worksheet' name='Most Product sold'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B36FF807-2B7E-42A2-ACB0-C5E132BD855F}' />
+    </window>
+    <window class='worksheet' name='Profits by product'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0F9F0953-74EF-4F8F-834A-9D45FA4FCFC8}' />
+    </window>
+    <window class='worksheet' name='Product Cost'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BD2D4E19-1B85-4657-B6CE-D311FC4F48E0}' />
+    </window>
+    <window class='dashboard' name='Overview'>
+      <viewpoints>
+        <viewpoint name='% Inversion by country'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='% revenue by country'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Average quantity per order'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Averague revenue per ticket'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Category sells per country'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gross Profit'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI Total-revenue'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Marketing cost'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Profit'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='48' />
+      <simple-id uuid='{FD4F0B3D-D40D-469D-99F3-44F6B8E9D48C}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Detailed Profits'>
+      <viewpoints>
+        <viewpoint name='Detailed table'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gross Profit Per category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Revenue for Electronic'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='best-selling category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='monto total by category and product'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='26' />
+      <simple-id uuid='{71082408-65FA-4AFE-83D3-C5C39EFEE802}' />
+    </window>
+  </windows>
+</workbook>
